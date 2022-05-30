@@ -12,12 +12,13 @@ const Main:FC=()=>{
     const Intersepting = useScroll(parentRef,childRef,()=>fetchCatsImages())
 
     function fetchCatsImages(){ 
+        const requestHeaders: HeadersInit| any = new Headers();
+        requestHeaders.set('X-Auth-Token', process.env.REACT_APP_BASE_API);
+
         fetch ('https://api.thecatapi.com/v1/images/search?limit=20',{
         method: "GET",
-        headers: {
-            "X-Auth-Token": "156edcb5-405c-4fcc-adb6-841d9df11d80",
-            
-        }}).then((response) => response.json())
+        headers: requestHeaders
+        }).then((response) => response.json())
         .then(result=> setData([...Data,...result]))
     }
 
