@@ -34,7 +34,6 @@ const Heart: React.FC<HeartProps> = ({id, url}) =>{
             }
         }
     },[arrayFavorite, id])
-    
     return( 
         <div className={'card__heart'}>
             {isClicked ? <img src={HeartClicked} className={'card__heart_icon'} 
