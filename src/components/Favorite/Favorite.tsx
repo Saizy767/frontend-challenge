@@ -5,12 +5,12 @@ import catGif from '../../images/catGif.gif'
 import '../Main/Main.css'
 
 const Favorite: React.FC = () =>{
-
     const array = useTypedSelector((state: RootState)=> state.regulaterFavorite.array)
+    console.log(array)
     return(
         <main className={'main'}>
-            <section className={'main__section'}>
-                {array.length !== 0 ? array.map((el)=>{
+            <div className={'main__section'}>
+                {array.length ? array.map((el:any)=>{
                     return(
                         <Card key={el.id} {...el}/>
                     )
@@ -20,7 +20,7 @@ const Favorite: React.FC = () =>{
                     <img src={catGif} className={'main__warning_cat'} alt={'cat'}/>
                 </div>
                 }
-            </section>
+            </div>
         </main>
     )
 }

@@ -16,17 +16,16 @@ const Navbar:FC = () =>{
     
     return(
         <nav className={'navbar'}>
-            <div className={'navbar__menu'}>
-                {Pages.map((el)=>{
+            <ul className={'navbar__menu'}>
+                {Pages.map((el:IPages)=>{
                     return(
-                        <Link to={el.link} key={el.id} 
-                              className={`navbar__link ${el.className}
+                        <Link to={el.link} key={el.id} className={`navbar__link ${el.className}
                               ${el.link === location.pathname ? 'navbar__current' : ''}`}>
-                            <span className={`navbar__link_name`}>{el.name}</span>
+                            <li className={`navbar__link_name`}>{el.name}</li>
                         </Link>
                     )
                 })}
-            </div>
+            </ul>
         </nav>
     )
 }
