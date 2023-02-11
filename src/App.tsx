@@ -3,13 +3,6 @@ import Favorite from './components/Favorite/Favorite';
 import Main from './components/Main/Main';
 import Navbar from './components/Navbar/Navbar';
 
-export interface IData{
-  breeds: number[];
-  id: string,
-  height: number,
-  width: number,
-  url: string
-}
 const App = () => {
   return (
     <BrowserRouter>

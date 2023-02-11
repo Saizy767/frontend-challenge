@@ -1,13 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { HeartProps } from '../models/Heart'
 
-export interface ICatBlock{
-  id: string
-  url: string
-  isFavorite: boolean
-}
 
 interface IArray{
-  array: ICatBlock[] | []
+  array: HeartProps[] | [],
 } 
 
 const initialState: IArray = {
@@ -18,11 +14,11 @@ export const regulaterArraySlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    adding: (state, action: PayloadAction<ICatBlock>) => {
+    adding: (state, action: PayloadAction<HeartProps>) => {
       state.array = [...state.array, action.payload]
       localStorage.setItem('favorites',JSON.stringify([...state.array]))
     },
-    deleting: (state, action: PayloadAction<ICatBlock>) => {
+    deleting: (state, action: PayloadAction<HeartProps>) => {
       for (let i=0; i < state.array.length; i++){
         if (state.array[i].id === action.payload.id){
           state.array.splice(i, 1)

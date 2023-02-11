@@ -24,11 +24,11 @@ export function useScroll(parentRef: React.MutableRefObject<HTMLElement| null>,
 
         if (childRef.current) {
             observer.current.observe(childRef.current);
-            observerRefValue = childRef.current; // <-- save ref value
+            observerRefValue = childRef.current;
           }
 
         return function () {
-            if (observerRefValue) {observer.current.unobserve(observerRefValue)}; // <-- use saved value
+            if (observerRefValue) {observer.current.unobserve(observerRefValue)};
   };
     }, [childRef, parentRef, callback, isVisible])
 }

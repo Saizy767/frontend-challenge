@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import regulaterArraySlice from './savingFavoriteSlice'
+import regulaterArraySlice from './favoriteReducer'
 
 export const store = configureStore({
   reducer: {

@@ -1,19 +1,11 @@
 import {FC} from "react";
 import {Link, useLocation} from 'react-router-dom'
+import { IPages, Pages } from "../../models/Navbar";
 import './Navbar.css'
 
-interface IPages{
-    id: number,
-    name: string,
-    link: string,
-    className: string,
-}
 
 const Navbar:FC = () =>{
     const location = useLocation()
-    const Pages: IPages[] = [{name:'Все котики',link:'/', className:'link_all',id: 1}
-                            ,{name:'Любимые котики', link:'/favorite',className:'link_favorite', id: 2}]
-    
     return(
         <nav className={'navbar'}>
             <ul className={'navbar__menu'}>
